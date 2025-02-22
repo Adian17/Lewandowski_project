@@ -1,0 +1,136 @@
+Player,Season,Team,League,GP,G,A,PTS,PIM,+/-
+Alex Iafallo,2011-12,Fargo Force,USHL,58,17,15,32,8,11
+Alex Iafallo,2012-13,Fargo Force,USHL,50,20,23,43,15,34
+Alex Iafallo,2013-14,U. of Minnesota-Duluth,NCHC,36,11,11,22,10,
+Alex Iafallo,2014-15,U. of Minnesota-Duluth,NCHC,34,8,17,25,12,16
+Alex Iafallo,2015-16,U. of Minnesota-Duluth,NCHC,40,8,15,23,8,3
+Alex Iafallo,2016-17,U. of Minnesota-Duluth,NCHC,42,21,30,51,22,22
+Alex Iafallo,2017-18,Los Angeles Kings,NHL,75,9,16,25,12,10
+Alex Iafallo,2018-19,Los Angeles Kings,NHL,82,15,18,33,22,-17
+Alex Iafallo,2019-20,Los Angeles Kings,NHL,70,17,26,43,14,1
+Alex Iafallo,2020-21,Los Angeles Kings,NHL,55,13,17,30,4,-8
+Alex Iafallo,2021-22,Los Angeles Kings,NHL,79,17,20,37,8,4
+Alex Iafallo,2022-23,Los Angeles Kings,NHL,59,14,22,36,20,14
+Alex Iafallo,2023-24,Winnipeg Jets,NHL,82,11,16,27,6,14
+Alex Iafallo,2024-25,Winnipeg Jets,NHL,56,8,11,19,13,13
+Ilya Lyubushkin,2011-12,Kuznetskie Medvedi,Rus-MHL,26,0,1,1,34,-1
+Ilya Lyubushkin,2011-12,Yaroslavl Loko Jr.,Rus-MHL,21,3,1,4,26,4
+Ilya Lyubushkin,2012-13,Yaroslavl Loko Jr.,Rus-MHL,4,0,0,0,5,3
+Ilya Lyubushkin,2012-13,Yaroslavl Lokomotiv,Rus-VHL,42,1,4,5,26,6
+Ilya Lyubushkin,2013-14,Yaroslavl Lokomotiv,KHL,32,1,1,2,18,0
+Ilya Lyubushkin,2013-14,Yaroslavl Loko Jr.,Rus-MHL,11,1,1,2,11,10
+Ilya Lyubushkin,2014-15,Yaroslavl Lokomotiv,KHL,60,1,6,7,30,4
+Ilya Lyubushkin,2015-16,Yaroslavl Lokomotiv,KHL,55,4,7,11,68,15
+Ilya Lyubushkin,2016-17,Yaroslavl Lokomotiv,KHL,60,3,4,7,69,4
+Ilya Lyubushkin,2017-18,Yaroslavl Lokomotiv,KHL,50,3,6,9,73,14
+Ilya Lyubushkin,2018-19,Arizona Coyotes,NHL,41,0,4,4,13,-9
+Ilya Lyubushkin,2019-20,Tucson Roadrunners,AHL,2,0,0,0,2,0
+Ilya Lyubushkin,2019-20,Arizona Coyotes,NHL,51,0,4,4,18,4
+Ilya Lyubushkin,2020-21,Yaroslavl Lokomotiv,KHL,5,0,0,0,2,-4
+Ilya Lyubushkin,2020-21,Arizona Coyotes,NHL,42,1,1,2,10,-13
+Ilya Lyubushkin,2021-22,Arizona Coyotes,NHL,46,0,9,9,26,-6
+Ilya Lyubushkin,2021-22,Toronto Maple Leafs,NHL,31,2,4,6,25,4
+Ilya Lyubushkin,2022-23,Buffalo Sabres,NHL,68,2,12,14,38,-2
+Ilya Lyubushkin,2023-24,Anaheim Ducks,NHL,55,0,4,4,51,-13
+Ilya Lyubushkin,2023-24,Toronto Maple Leafs,NHL,19,0,4,4,6,2
+Ilya Lyubushkin,2024-25,Dallas Stars,NHL,53,0,11,11,16,12
+Maxwell Crozier,2017-18,Nanaimo Clippers,BCHL,49,6,23,29,67,
+Maxwell Crozier,2018-19,Sioux Falls Stampede 🏆,USHL,60,10,33,43,132,5
+Maxwell Crozier,2019-20,Providence College,H-East,33,4,12,16,24,11
+Maxwell Crozier,2020-21,Providence College,H-East,17,3,5,8,10,5
+Maxwell Crozier,2021-22,Providence College,H-East,32,7,16,23,16,9
+Maxwell Crozier,2022-23,Providence College,H-East,37,3,21,24,33,10
+Maxwell Crozier,2022-23,Syracuse Crunch,AHL,9,0,3,3,6,1
+Maxwell Crozier,2023-24,Syracuse Crunch,AHL,49,4,17,21,43,1
+Maxwell Crozier,2023-24,Tampa Bay Lightning,NHL,13,0,2,2,7,-2
+Maxwell Crozier,2024-25,Tampa Bay Lightning*,NHL,5,0,0,0,0,0
+Maxwell Crozier,2024-25,Syracuse Crunch,AHL,30,5,11,16,54,9
+Ivan Barbashev,2011-12,Balashikha MVD HC Jr.,Rus-MHL,38,8,2,10,18,-5
+Ivan Barbashev,2012-13,Moncton Wildcats,QMJHL,68,18,44,62,36,9
+Ivan Barbashev,2013-14,Moncton Wildcats,QMJHL,48,25,43,68,27,-11
+Ivan Barbashev,2014-15,Moncton Wildcats,QMJHL,57,45,50,95,59,16
+Ivan Barbashev,2015-16,Chicago Wolves,AHL,65,10,18,28,15,-14
+Ivan Barbashev,2016-17,Chicago Wolves,AHL,46,19,18,37,14,0
+Ivan Barbashev,2016-17,St. Louis Blues,NHL,30,5,7,12,2,5
+Ivan Barbashev,2017-18,St. Louis Blues,NHL,53,7,6,13,4,-1
+Ivan Barbashev,2017-18,Chicago Wolves,AHL,20,5,5,10,6,-1
+Ivan Barbashev,2018-19,St. Louis Blues 🏆,NHL,80,14,12,26,17,-4
+Ivan Barbashev,2019-20,St. Louis Blues,NHL,69,11,15,26,23,4
+Ivan Barbashev,2020-21,St. Louis Blues,NHL,38,5,7,12,6,5
+Ivan Barbashev,2021-22,St. Louis Blues,NHL,81,26,34,60,40,4
+Ivan Barbashev,2022-23,St. Louis Blues,NHL,59,10,19,29,36,-10
+Ivan Barbashev,2022-23,Vegas Golden Knights 🏆,NHL,23,6,10,16,6,11
+Ivan Barbashev,2023-24,Vegas Golden Knights,NHL,82,19,26,45,42,15
+Ivan Barbashev,2024-25,Vegas Golden Knights,NHL,46,15,19,34,6,14
+Owen Tippett,2014-15,Toronto Jr. Canadiens,OJHL,6,2,1,3,2,
+Owen Tippett,2015-16,Mississauga Steelheads,OHL,48,15,5,20,10,-2
+Owen Tippett,2016-17,Mississauga Steelheads,OHL,60,44,31,75,36,24
+Owen Tippett,2017-18,Florida Panthers,NHL,7,1,0,1,0,-6
+Owen Tippett,2017-18,Mississauga Steelheads,OHL,51,36,39,75,30,1
+Owen Tippett,2017-18,Springfield Thunderbirds,AHL,5,1,1,2,2,2
+Owen Tippett,2018-19,Mississauga Steelheads,OHL,23,19,14,33,10,7
+Owen Tippett,2018-19,Saginaw Spirit,OHL,31,14,27,41,8,21
+Owen Tippett,2019-20,Springfield Thunderbirds,AHL,46,19,21,40,18,12
+Owen Tippett,2020-21,Florida Panthers,NHL,45,7,11,18,6,-5
+Owen Tippett,2021-22,Florida Panthers,NHL,42,6,8,14,10,2
+Owen Tippett,2021-22,Charlotte Checkers,AHL,12,6,12,18,2,-1
+Owen Tippett,2021-22,Philadelphia Flyers,NHL,21,4,3,7,2,-4
+Owen Tippett,2022-23,Philadelphia Flyers,NHL,77,27,22,49,16,-17
+Owen Tippett,2023-24,Philadelphia Flyers,NHL,78,28,25,53,12,-5
+Owen Tippett,2024-25,Philadelphia Flyers,NHL,53,16,16,32,14,-9
+Alex Ovechkin,2001-02,Moscow Dynamo,Russia,21,2,2,4,4,
+Alex Ovechkin,2002-03,Moscow Dynamo,Russia,40,8,7,15,28,1
+Alex Ovechkin,2003-04,Moscow Dynamo,Russia,53,13,10,23,42,
+Alex Ovechkin,2004-05,Moscow Dynamo,Russia,37,13,14,27,32,
+Alex Ovechkin,2005-06,Washington Capitals,NHL,81,52,54,106,52,2
+Alex Ovechkin,2006-07,Washington Capitals,NHL,82,46,46,92,52,-19
+Alex Ovechkin,2007-08,Washington Capitals,NHL,82,65,47,112,40,28
+Alex Ovechkin,2008-09,Washington Capitals,NHL,79,56,54,110,72,8
+Alex Ovechkin,2009-10,Washington Capitals,NHL,72,50,59,109,89,45
+Alex Ovechkin,2010-11,Washington Capitals,NHL,79,32,53,85,41,24
+Alex Ovechkin,2011-12,Washington Capitals,NHL,78,38,27,65,26,-8
+Alex Ovechkin,2012-13,Moscow Dynamo,KHL,31,19,21,40,14,13
+Alex Ovechkin,2012-13,Washington Capitals,NHL,48,32,24,56,36,2
+Alex Ovechkin,2013-14,Washington Capitals,NHL,78,51,28,79,48,-35
+Alex Ovechkin,2014-15,Washington Capitals,NHL,81,53,28,81,58,10
+Alex Ovechkin,2015-16,Washington Capitals,NHL,79,50,21,71,53,21
+Alex Ovechkin,2016-17,Washington Capitals,NHL,82,33,36,69,50,6
+Alex Ovechkin,2017-18,Washington Capitals 🏆,NHL,82,49,38,87,32,3
+Alex Ovechkin,2018-19,Washington Capitals,NHL,81,51,38,89,40,7
+Alex Ovechkin,2019-20,Washington Capitals,NHL,68,48,19,67,30,-12
+Alex Ovechkin,2020-21,Washington Capitals,NHL,45,24,18,42,12,-7
+Alex Ovechkin,2021-22,Washington Capitals,NHL,77,50,40,90,18,8
+Alex Ovechkin,2022-23,Washington Capitals,NHL,73,42,33,75,48,-16
+Alex Ovechkin,2023-24,Washington Capitals,NHL,79,31,34,65,20,-22
+Alex Ovechkin,2024-25,Washington Capitals,NHL,39,26,17,43,10,18
+Aaron Ekblad,2011-12,Barrie Colts,OHL,63,10,19,29,34,-5
+Aaron Ekblad,2012-13,Barrie Colts,OHL,54,7,27,34,64,29
+Aaron Ekblad,2013-14,Barrie Colts,OHL,58,23,30,53,91,7
+Aaron Ekblad,2014-15,Florida Panthers,NHL,81,12,27,39,32,12
+Aaron Ekblad,2015-16,Florida Panthers,NHL,78,15,21,36,41,18
+Aaron Ekblad,2016-17,Florida Panthers,NHL,68,10,11,21,58,-23
+Aaron Ekblad,2017-18,Florida Panthers,NHL,82,16,22,38,71,9
+Aaron Ekblad,2018-19,Florida Panthers,NHL,82,13,24,37,47,1
+Aaron Ekblad,2019-20,Florida Panthers,NHL,67,5,36,41,26,12
+Aaron Ekblad,2020-21,Florida Panthers,NHL,35,11,11,22,33,5
+Aaron Ekblad,2021-22,Florida Panthers,NHL,61,15,42,57,26,38
+Aaron Ekblad,2022-23,Florida Panthers,NHL,71,14,24,38,68,-14
+Aaron Ekblad,2023-24,Florida Panthers 🏆,NHL,51,4,14,18,50,27
+Aaron Ekblad,2024-25,Florida Panthers,NHL,49,3,23,26,43,8
+Andre Burakovsky,2011-12,Malmo Redhawks,Swe-1,10,0,1,1,0,1
+Andre Burakovsky,2011-12,Malmo Jr.,Swe-Jr,42,17,25,42,43,-3
+Andre Burakovsky,2012-13,Malmo Redhawks,Swe-1,43,4,7,11,8,-2
+Andre Burakovsky,2012-13,Malmo Jr.,Swe-Jr,13,3,4,7,8,-4
+Andre Burakovsky,2013-14,Erie Otters,OHL,57,41,46,87,35,46
+Andre Burakovsky,2014-15,Washington Capitals,NHL,53,9,13,22,10,12
+Andre Burakovsky,2014-15,Hershey Bears,AHL,13,3,4,7,6,0
+Andre Burakovsky,2015-16,Washington Capitals,NHL,79,17,21,38,12,4
+Andre Burakovsky,2016-17,Washington Capitals,NHL,64,12,23,35,14,13
+Andre Burakovsky,2017-18,Washington Capitals 🏆,NHL,56,12,13,25,27,3
+Andre Burakovsky,2018-19,Washington Capitals,NHL,76,12,13,25,14,2
+Andre Burakovsky,2019-20,Colorado Avalanche,NHL,58,20,25,45,22,11
+Andre Burakovsky,2020-21,Colorado Avalanche,NHL,53,19,25,44,10,4
+Andre Burakovsky,2021-22,Colorado Avalanche 🏆,NHL,80,22,39,61,18,12
+Andre Burakovsky,2022-23,Seattle Kraken,NHL,49,13,26,39,14,-9
+Andre Burakovsky,2023-24,Seattle Kraken,NHL,49,7,9,16,14,-15
+Andre Burakovsky,2024-25,Seattle Kraken,NHL,54,5,16,21,8,-6
