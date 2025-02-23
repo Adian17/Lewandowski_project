@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 
 options = Options()
-options.headless = True  # Runs in the background
+options.headless = True
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
