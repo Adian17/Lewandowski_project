@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHL Performance Predictor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding: 20px; margin: 0; }
+        header { background-color: #1e3a8a; color: white; padding: 20px; position: relative; }
+        a { color: #f4f4f9; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .container { max-width: 800px; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 30px auto; }
+        form input, form select, form button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+        form button { background-color: #1e3a8a; color: white; border: none; cursor: pointer; }
+        form button:hover { background-color: #3742fa; }
+        .results, .chart-container { margin-top: 30px; padding: 20px; background-color: #e7f0ff; border-radius: 8px; }
+        canvas { width: 100% !important; max-width: 800px; height: auto !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NHL Performance Predictor</h1>
+        <p>Enter your stats to predict projected performance for the first three NHL seasons.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="league_analysis.html">League Analysis</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form id="predictionForm">
+            <label for="league">Pre-NHL League:</label>
+            <select id="league" name="league" required>
+                <option value="">Loading leagues...</option>
+            </select>
+
+            <label for="gp">Games Played (Pre-NHL):</label>
+            <input type="number" id="gp" name="gp" min="0" required>
+
+            <label for="goals">Goals (Pre-NHL):</label>
+            <input type="number" id="goals" name="goals" min="0" required>
+
+            <label for="assists">Assists (Pre-NHL):</label>
+            <input type="number" id="assists" name="assists" min="0" required>
+
+            <label for="points">Points (Pre-NHL):</label>
+            <input type="number" id="points" name="points" min="0" required>
+
+            <label for="pim">Penalty Minutes (Pre-NHL):</label>
+            <input type="number" id="pim" name="pim" min="0" required>
+
+            <label for="plusMinus">Plus/Minus (Pre-NHL):</label>
+            <input type="number" id="plusMinus" name="plusMinus" required>
+
+            <button type="submit">Predict NHL Performance</button>
+        </form>
+
+        <div class="results" id="predictionResults">
+            <h3>Prediction Results (Projected NHL Performance)</h3>
+            <p id="season1">Season 1: -</p>
+            <p id="season2">Season 2: -</p>
+            <p id="season3">Season 3: -</p>
+        </div>
+
+        <div class="chart-container">
+            <h3>Projected Player Growth Over First 3 NHL Seasons</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <!-- ✅ Combined JS for fetching leagues and predictions -->
+    <script>
+        // ✅ Dynamically load leagues from Flask backend
+        window.onload = async function() {
+            const leagueDropdown = document.getElementById("league");
+            try {
+                const response = await fetch('/leagues');
+                const data = await response.json();
+                const leagues = data.leagues;
+                leagueDropdown.innerHTML = '';
+
+                leagues.forEach(league => {
+                    const option = document.createElement("option");
+                    option.value = league;
+                    option.textContent = league;
+                    leagueDropdown.appendChild(option);
+                });
+
+                if (leagues.length === 0) {
+                    leagueDropdown.innerHTML = '<option value="">No leagues found</option>';
+                }
+            } catch (error) {
+                console.error("Failed to load leagues:", error);
+                leagueDropdown.innerHTML = '<option value="">Failed to load leagues</option>';
+            }
+        };
+
+        // ✅ Handle prediction form submission
+        document.getElementById("predictionForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = {
+                league: document.getElementById("league").value,
+                gp: parseInt(document.getElementById("gp").value),
+                goals: parseInt(document.getElementById("goals").value),
+                assists: parseInt(document.getElementById("assists").value),
+                points: parseInt(document.getElementById("points").value),
+                pim: parseInt(document.getElementById("pim").value),
+                plusMinus: parseInt(document.getElementById("plusMinus").value),
+            };
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            const predictions = result.predictions;
+
+            // ✅ Update Prediction Results - Consistent stats for all seasons
+            predictions.forEach((season, index) => {
+                document.getElementById(`season${index + 1}`).textContent =
+                    `Season ${index + 1}: ${Math.round(season[0])} GP, ${Math.round(season[3])} PTS, ${Math.round(season[1])} G, ${Math.round(season[2])} A`;
+            });
+
+            // ✅ Update Chart
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            if (window.performanceChartInstance) window.performanceChartInstance.destroy();
+            window.performanceChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Season 1", "Season 2", "Season 3"],
+                    datasets: [
+                        { label: 'Games Played', data: predictions.map(s => s[0]), borderColor: 'blue', fill: false },
+                        { label: 'Points', data: predictions.map(s => s[3]), borderColor: 'purple', fill: false },
+                        { label: 'Goals', data: predictions.map(s => s[1]), borderColor: 'green', fill: false },
+                        { label: 'Assists', data: predictions.map(s => s[2]), borderColor: 'orange', fill: false }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: true, text: 'Projected Player Growth (3 NHL Seasons)' }
+                    },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

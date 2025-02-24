@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL Performance Predictor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        form input, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #3742fa;
+        }
+
+        .results, .chart-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e7f0ff;
+            border-radius: 8px;
+        }
+
+        canvas {
+            width: 100% !important;
+            max-width: 800px;
+            height: auto !important;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            nav {
+                position: static;
+                margin-top: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NHL Performance Predictor</h1>
+        <p>Enter your stats to predict performance for the first three NHL seasons.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="league_analysis.html">League Analysis</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form id="predictionForm">
+            <label for="league">Pre-NHL League:</label>
+            <select id="league" name="league" required>
+                <option value="AHL">AHL</option>
+                <option value="KHL">KHL</option>
+                <option value="OHL">OHL</option>
+                <option value="WHL">WHL</option>
+                <option value="NCAA">NCAA</option>
+            </select>
+
+            <label for="gp">Games Played (Pre-NHL):</label>
+            <input type="number" id="gp" name="gp" min="0" required>
+
+            <label for="goals">Goals (Pre-NHL):</label>
+            <input type="number" id="goals" name="goals" min="0" required>
+
+            <label for="assists">Assists (Pre-NHL):</label>
+            <input type="number" id="assists" name="assists" min="0" required>
+
+            <label for="points">Points (Pre-NHL):</label>
+            <input type="number" id="points" name="points" min="0" required>
+
+            <label for="pim">Penalty Minutes (Pre-NHL):</label>
+            <input type="number" id="pim" name="pim" min="0" required>
+
+            <label for="plusMinus">Plus/Minus (Pre-NHL):</label>
+            <input type="number" id="plusMinus" name="plusMinus" required>
+
+            <button type="submit">Predict NHL Performance</button>
+        </form>
+
+        <div class="results" id="predictionResults">
+            <h3>Prediction Results</h3>
+            <p id="season1">Season 1: -</p>
+            <p id="season2">Season 2: -</p>
+            <p id="season3">Season 3: -</p>
+        </div>
+
+        <div class="chart-container">
+            <h3>Projected NHL Performance for First 3 Seasons</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("predictionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const league = document.getElementById("league").value;
+            const gp = parseInt(document.getElementById("gp").value);
+            const goals = parseInt(document.getElementById("goals").value);
+            const assists = parseInt(document.getElementById("assists").value);
+            const points = parseInt(document.getElementById("points").value);
+            const pim = parseInt(document.getElementById("pim").value);
+            const plusMinus = parseInt(document.getElementById("plusMinus").value);
+
+            document.getElementById("season1").textContent = `Season 1: ${gp} GP, ${goals} G, ${assists} A, ${points} PTS, ${pim} PIM, +/- ${plusMinus}`;
+            document.getElementById("season2").textContent = `Season 2: ${Math.round(goals * 1.2)} G, ${Math.round(assists * 1.2)} A, ${Math.round(points * 1.2)} PTS`;
+            document.getElementById("season3").textContent = `Season 3: ${Math.round(goals * 1.5)} G, ${Math.round(assists * 1.5)} A, ${Math.round(points * 1.5)} PTS`;
+
+            const projectedData = {
+                seasons: ["Season 1", "Season 2", "Season 3"],
+                gamesPlayed: [gp, gp + 3, gp + 5],
+                goals: [goals, Math.round(goals * 1.2), Math.round(goals * 1.5)],
+                assists: [assists, Math.round(assists * 1.2), Math.round(assists * 1.5)],
+                points: [points, Math.round(points * 1.2), Math.round(points * 1.5)]
+            };
+
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            if (window.performanceChartInstance) {
+                window.performanceChartInstance.destroy();
+            }
+            window.performanceChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: projectedData.seasons,
+                    datasets: [
+                        {
+                            label: 'Games Played',
+                            data: projectedData.gamesPlayed,
+                            borderColor: 'blue',
+                            fill: false,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Goals',
+                            data: projectedData.goals,
+                            borderColor: 'green',
+                            fill: false,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Assists',
+                            data: projectedData.assists,
+                            borderColor: 'orange',
+                            fill: false,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Points',
+                            data: projectedData.points,
+                            borderColor: 'purple',
+                            fill: false,
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Projected Player Growth Over First 3 NHL Seasons'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Performance Metrics'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

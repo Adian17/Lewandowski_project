@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>League Analysis - NHL Performance Predictor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding: 20px; }
+        header { background-color: #1e3a8a; color: white; padding: 20px; }
+        a { color: #1e3a8a; text-decoration: none; margin: 0 10px; }
+        canvas { max-width: 800px; margin: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>League Analysis</h1>
+        <nav>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <section>
+        <canvas id="leagueChart"></canvas>
+    </section>
+
+    <script>
+        // Placeholder data - replace with Flask API calls later if needed
+        const ctx = document.getElementById('leagueChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['KHL', 'AHL', 'WHL', 'OHL', 'NCAA'],
+                datasets: [{
+                    label: 'NHL Points Correlation (%)',
+                    data: [80, 75, 60, 55, 45], // Example data
+                    backgroundColor: '#1e3a8a'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: { display: true, text: 'Pre-NHL Leagues Correlation with NHL Performance' },
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Correlation (%)' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
